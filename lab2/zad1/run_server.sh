@@ -70,8 +70,8 @@ fi
 
 # clean up
 echo "Stopping the container"
-docker stop server
+docker stop ${CONTAINER_NAME}
 
 echo "Removing the container and the image"
-docker rm server
-docker rmi server-image
+docker rm ${CONTAINER_NAME}
+docker rmi ${IMAGE_NAME}
