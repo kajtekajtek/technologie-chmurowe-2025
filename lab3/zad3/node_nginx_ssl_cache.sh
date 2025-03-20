@@ -151,7 +151,6 @@ run() {
 
 run_tests() {
   echo "Tests:"
-
   
   echo "Checking the HTTP and HTTPS responses..."
   sleep 2
@@ -175,12 +174,10 @@ run_tests() {
     exit 1
   fi
 
-  # Testy zakończone sukcesem
   cleanup
   echo "Tests passed successfully."
 }
 
-# Funkcja sprzątająca (np. na końcu testów)
 cleanup() {
   docker rm -f "${CONTAINER_NAME}" >/dev/null 2>&1 || true
   rm -f Dockerfile default.conf entrypoint.sh app.js
