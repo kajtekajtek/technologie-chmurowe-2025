@@ -1,9 +1,9 @@
 #!/bin/sh
 # scripts/run_web.sh
 
-source ../.env.local
+source "$(dirname $0)/env.sh"
 
-cd ../app/
+cd $(dirname $0)/../app/
 
 echo "Building the $APP_IMAGE image..."
 docker build -t $APP_IMAGE --build-arg PORT=$PORT .

@@ -1,7 +1,7 @@
 #!/bin/sh
 # scripts/run_db.sh
 
-source ../.env.local
+source "$(dirname $0)/env.sh"
 
 echo "Running the database container..."
 docker run -d \

@@ -1,7 +1,7 @@
 #!/bin/sh
 # scripts/stop.sh
 
-source ../.env.local
+source "$(dirname $0)/env.sh"
 
 echo "Stopping the running containers..."
 docker stop $DB_HOST $APP_HOST

@@ -1,14 +1,16 @@
 #!/bin/sh
 # scripts/run.sh
 
-source ../.env.local
+source "$(dirname $0)/env.sh"
 
 echo "Creating the bridge network..."
 # create the bridge network for containers
 docker network create --driver bridge $NETWORK
 
 # run the database
-./run_db.sh
+$(dirname $0)/run_db.sh
+
+sleep 5
 
 # run the node js app
-./run_web.sh
+$(dirname $0)/run_web.sh
