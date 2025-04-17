@@ -1,0 +1,9 @@
+version: "3.9"
+
+services:
+  web:
+    build: .
+    container_name: flask-app
+    ports:
+      - "8080:8080"
+    command: python app.py

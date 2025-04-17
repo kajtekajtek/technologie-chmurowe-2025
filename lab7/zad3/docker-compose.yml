@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  db:
+    image: mongo:$MONGO_VERSION
+    container_name: db
+    networks:
+      - net_A
+    volumes:
+      - db-data:/data/db
+    ports:
+      - '27017:$MONGO_PORT'
+  
+  server:
+    build: .
+    container_name: server
+    networks:
+      - net_A
+    depends_on:
+      - db
+    ports:
+      - "3003:5000"
+
+networks:
+  net_A:
+    external: false
+    name: net_A
+
+volumes:
+  db-data:
