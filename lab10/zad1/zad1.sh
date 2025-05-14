@@ -1,5 +1,5 @@
 #!/bin/sh
-# usage: ./zad3.sh [--clean]
+# usage: ./zad1.sh [--clean]
 
 set -euo pipefail
 
