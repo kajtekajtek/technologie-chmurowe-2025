@@ -1,0 +1,6 @@
+version: '3'
+services:
+  worker:
+    image: my-worker
+    depends_on:
+      - db

@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose -f docker-compose-1.yaml -f docker-compose-2.yaml -f docker-compose-3.yaml convert
+    kompose.version: 1.35.0 (HEAD)
+  labels:
+    io.kompose.service: app
+  name: app
+spec:
+  ports:
+    - name: "8000"
+      port: 8000
+      targetPort: 8080
+  selector:
+    io.kompose.service: app
